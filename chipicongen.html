@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chip icon generator</title>
     <script src="script.js"></script>
+    <script src='https://html2canvas.hertzen.com/dist/html2canvas.min.js'></script>
 </head>
 <body>
 
@@ -15,7 +16,10 @@
             <input id="pinAmmount_slider" value="8" type="range" min="6" max="40" step="2" oninput="this.nextElementSibling.value = this.value; SetPinNumber();">
             <input id="pinAmmount_number" type="number" value="8" step="2" onchange="SetPinNumber();"></input>
         </div>     
-        <a href="https://github.com/mauminimus/electronic-chip-pinout-maker">https://github.com/mauminimus/electronic-chip-pinout-maker</a>   
+        <a href="https://github.com/mauminimus/electronic-chip-pinout-maker">Github Repository</a>  
+        <br> 
+        <button onclick="screenshot()">Save</button>
+        <br>
     </div>
 
 
@@ -63,5 +67,21 @@
             </div>
         </div>
     </div>
+
+    <script>
+        const getScreenshotOfElement = async (element) => {
+            const canvas = await html2canvas(element)
+            document.getElementById('settings').appendChild(canvas)
+          }
+          
+          
+        function screenshot(){
+            try{ document.getElementsByTagName('canvas')[0].remove() }
+            catch{ }
+           
+            let div = document.querySelector('#chipicon')
+            getScreenshotOfElement(div)
+          }
+    </script>
 </body>
 </html>
