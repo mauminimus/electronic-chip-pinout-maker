@@ -1,0 +1,178 @@
+@font-face {
+    font-family: roboto;
+    src: url("../Roboto-Medium.ttf");
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #3d484d;
+    margin: 0px;
+    font-family: roboto;
+}
+
+
+#iconcontainer {
+    width: fit-content;
+    margin: 0px auto;
+}
+
+#chipicon {
+    display: inline-block;
+    background-color: white;
+    height: fit-content;
+    width: 100px;
+    margin: 30px 0px;
+    padding: 30px 120px;
+}
+
+#case {
+    width: 94px;
+    border: 3px solid black;
+    float: left;
+}
+
+.pinLeft, .pinRight {
+    border: 3px solid black;
+    width: 20px;
+    height: 16px;
+    margin: 10px 0px;
+}
+
+
+#leftbox {
+    float: left;
+    margin-left: -26px;
+}
+
+#rightbox {
+    float: right;
+    margin-right: -26px;
+}
+
+
+
+
+/*  NOTCH   */
+
+#notch {
+    width: 30px;
+    height: 24px;
+    margin: -3px 0px 0px 28.5px;
+    float: left;
+    border: 3px solid black;
+    position: absolute;
+    border-radius: 0px 0px 18px 18px;
+    background-color: white;
+    border-top: none;
+}
+
+
+
+
+
+
+/* TEXT */
+
+#leftboxtext, #rightboxtext {
+    width: fit-content;
+    margin-top: 2px;
+}
+
+#leftboxtext input, #rightboxtext input {
+    display: block;
+    width: 80px;
+    height: 26px;
+    margin: 6px 0px 0px 0px;
+    border: none;
+    border-radius: 0px;
+    padding: 0px;
+    font-size: 20px;
+    text-underline-offset: -18px;
+}
+
+#leftboxtext input {
+    text-align: right;
+}
+
+#rightboxtext input {
+    text-align: left;
+}
+
+#leftboxtext {
+    float: left;
+    margin-left: -110px;
+}
+
+#rightboxtext {
+    float: right;
+    margin-right: -110px;
+}
+
+.underlined {
+    text-decoration: underline black;
+}
+
+
+
+/* NUMBERS */
+
+#leftboxnumbers {
+    margin: 0px 5px;
+    float: left;
+}
+
+#rightboxnumbers {
+    margin: 0px 5px;
+    float: right;
+}
+
+
+#leftboxnumbers input, #rightboxnumbers input {
+    display: block;
+    height: 22px;
+    margin: 10px 0px;
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-family: inherit;
+    padding: 0px;
+    width: 20px;
+}
+
+#leftboxnumbers input {
+    text-align: left;
+}
+
+#rightboxnumbers input {
+    text-align: right;
+}
+
+
+#Setting_pinammount input {
+    margin: 0px auto;
+}
+
+#settings {
+    float: left;
+    width: 500px;
+    height: fit-content;
+}
+
+#pinAmmount_number {
+    background-color: grey;
+    border: none;
+    border-radius: 3px;
+    width: 80px;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+}
+
+#Setting_pinammount {
+    margin: 50px;
+}
+
+#Setting_pinammount #pinAmmount_slider {
+    width: 150px;
+}
