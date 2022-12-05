@@ -4,25 +4,17 @@ function SetPinNumber() {
     let pinAmmount = document.getElementById("pinAmmount_number").value * 1;
     
     if (pinAmmount % 2 == 0) {
-        const sides = document.querySelectorAll('#leftboxtext, #leftbox, #leftboxnumbers, #rightboxnumbers, #rightbox, #rightboxtext');
-
-        /*for (let i = 0; i < sides.length; i++) {
-            sides[i].innerHTML = "";
-        }
-
-        for (let i = 0; i < pinAmmount/2; i++) {
-            sides[0].innerHTML += '<input type="text" class="" id="text' +(i+1)+ '">';
-            sides[1].innerHTML += '<div class="pinLeft"></div>';
-            sides[2].innerHTML += '<input type="button" value="' +(i+1)+ '" onclick="underline(' +(i+1)+ ');">';
-            sides[3].innerHTML += '<div class="pinRight"></div>';
-            sides[4].innerHTML += '<input type="text" class="" id="' +(pinAmmount-i)+ '">';
-            sides[5].innerHTML += '<input type="button" value="' +(pinAmmount-i)+ '" onclick="underline(' +(pinAmmount-i)+ ');">';
-        }*/
-
+        //get containers
+        let sides = document.querySelectorAll(
+            '#leftboxtext, #leftbox, #leftboxnumbers, #rightboxnumbers, #rightbox, #rightboxtext'
+        );
+        
+        //empty containers
         for (let i = 0; i < sides.length; i++) {
             s[i] = "";
         }
 
+        //fill list with new elements
         for (let i = 0; i < pinAmmount/2; i++) {
             s[0] += '<input type="text" id="text' +(i+1)+ '">';
             s[1] += '<div class="pinLeft"></div>';
@@ -32,6 +24,7 @@ function SetPinNumber() {
             s[5] += '<input type="button" value="' +(pinAmmount-i)+ '" onclick="ul(' +(pinAmmount-i)+ ');">';
         }
 
+        //write to html
         for (let i = 0; i < sides.length; i++) {
             sides[i].innerHTML = s[i];
         }
