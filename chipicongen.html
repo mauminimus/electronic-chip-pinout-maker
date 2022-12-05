@@ -1,67 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="chip_logo.jpg">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chip icon generator</title>
-    <script src="script.js"></script>
-</head>
-<body>
 
-    <div id="settings">
-        <div id="Setting_pinammount">
-            <input id="pinAmmount_slider" value="8" type="range" min="6" max="40" step="2" oninput="this.nextElementSibling.value = this.value; SetPinNumber();">
-            <input id="pinAmmount_number" type="number" value="8" step="2" onchange="SetPinNumber();"></input>
-        </div>     
-        <a href="https://github.com/mauminimus/electronic-chip-pinout-maker">https://github.com/mauminimus/electronic-chip-pinout-maker</a>   
-    </div>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="chip_logo.jpg">
+        <title>Chip icon generator</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="script.js"></script>
+    </head>
 
+    <body>
 
-    <div id="iconcontainer">
-        <div id="chipicon">
-            <div id="case">
-                <div id="leftboxtext">
-                    <input type="text" class="a" id="text1">
-                    <input type="text" class="a" id="text2">
-                    <input type="text" class="a" id="text3">
-                    <input type="text" class="a" id="text4">
-                </div>
-                <div id="leftbox">
-                    <div class="pinLeft"></div>
-                    <div class="pinLeft"></div>
-                    <div class="pinLeft"></div>
-                    <div class="pinLeft"></div>
-                </div>
-                <div id="leftboxnumbers">
-                    <input type="button" value="1" onclick="ul(1);">
-                    <input type="button" value="2" onclick="ul(2);">
-                    <input type="button" value="3" onclick="ul(3);">
-                    <input type="button" value="4" onclick="ul(4);">
-                </div>
-                <div id="notch">
-                </div>
-                <div id="rightbox">
-                    <div class="pinRight"></div>
-                    <div class="pinRight"></div>
-                    <div class="pinRight"></div>
-                    <div class="pinRight"></div>
-                </div>
-                <div id="rightboxtext">
-                    <input type="text" class="a" id="text8">
-                    <input type="text" class="a" id="text7">
-                    <input type="text" class="a" id="text6">
-                    <input type="text" class="a" id="text5">
-                </div>
-                <div id="rightboxnumbers">
-                    <input type="button" value="8" onclick="ul(8);">
-                    <input type="button" value="7" onclick="ul(7);">
-                    <input type="button" value="6" onclick="ul(6);">
-                    <input type="button" value="5" onclick="ul(5);">
+        <div id="settings">
+            <div id="Setting_pinammount">
+                <input id="pinAmmount_slider" value="8" type="range" min="6" max="40" step="2" oninput="this.nextElementSibling.value = this.value; SetPinNumber();">
+                <input id="pinAmmount_number" type="number" value="8" step="2" onchange="SetPinNumber();"></input>
+            </div>     
+            <a href="https://github.com/mauminimus/electronic-chip-pinout-maker">https://github.com/mauminimus/electronic-chip-pinout-maker</a>   
+        </div>
+
+        <div id="iconcontainer">
+            <div id="chipicon">
+                <div id="case">
+
+                    <div id="leftboxtext">
+                        <input type="text" class="a" id="text1">
+                        <input type="text" class="a" id="text2">
+                        <input type="text" class="a" id="text3">
+                        <input type="text" class="a" id="text4">
+                    </div>
+
+                    <div id="leftbox">
+                        <div class="pinLeft"></div>
+                        <div class="pinLeft"></div>
+                        <div class="pinLeft"></div>
+                        <div class="pinLeft"></div>
+                    </div>
+
+                    <div id="leftboxnumbers">
+                        <input type="button" value="1" onclick="ul(1);">
+                        <input type="button" value="2" onclick="ul(2);">
+                        <input type="button" value="3" onclick="ul(3);">
+                        <input type="button" value="4" onclick="ul(4);">
+                    </div>
+                    
+                    <div id="notch"></div>
+
+                    <div id="rightbox">
+                        <div class="pinRight"></div>
+                        <div class="pinRight"></div>
+                        <div class="pinRight"></div>
+                        <div class="pinRight"></div>
+                    </div>
+
+                    <div id="rightboxtext">
+                        <input type="text" class="a" id="text8">
+                        <input type="text" class="a" id="text7">
+                        <input type="text" class="a" id="text6">
+                        <input type="text" class="a" id="text5">
+                    </div>
+
+                    <div id="rightboxnumbers">
+                        <input type="button" value="8" onclick="ul(8);">
+                        <input type="button" value="7" onclick="ul(7);">
+                        <input type="button" value="6" onclick="ul(6);">
+                        <input type="button" value="5" onclick="ul(5);">
+                    </div>
+
                 </div>
             </div>
         </div>
-    </div>
-</body>
+        
+    </body>
+
 </html>
