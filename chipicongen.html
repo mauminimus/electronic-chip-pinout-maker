@@ -6,25 +6,36 @@
         <link rel="icon" href="chip_logo.jpg">
         <title>Chip icon generator</title>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="script.js"></script>
+
     </head>
 
     <body>
 
-        <div id="settings">
+        <div id="settings" style="display: block">
             <div id="Setting_pinammount">
-                <input id="pinAmmount_slider" value="8" type="range" min="6" max="40" step="2" oninput="this.nextElementSibling.value = this.value; SetPinNumber();">
-                <input id="pinAmmount_number" type="number" value="8" step="2" onchange="SetPinNumber();"></input>
+                <input id="pinAmmount_slider" value="8" type="range" min="6" max="40" step="2" oninput="this.nextElementSibling.value = this.value; SetPinNumber();  drawicon();">
+                <input id="pinAmmount_number" type="number" value="8" step="2" onchange="SetPinNumber(); drawicon();"></input>
             </div>     
             <a href="https://github.com/mauminimus/electronic-chip-pinout-maker">https://github.com/mauminimus/electronic-chip-pinout-maker</a>   
+            <br/>
+            <input type="button" value="download" onclick="save(); download();">
+
+
+            <svg id="iconarea">
+                <rect width="100" height="100"/>
+            </svg>
+
+            <svg width="340" height="200"><defs><style>.cls-1{fill:#fff;stroke:#000;stroke-miterlimit:10;stroke-width:3px;}</style></defs><rect class="cls-1" x="100" y="1.5" width="30" height="30"/></svg>
+            
         </div>
+
 
         <div id="iconcontainer">
             <div id="chipicon">
                 <div id="case">
 
                     <div id="leftboxtext">
-                        <input type="text" class="a" id="text1">
+                        <input type="text" class="a" id="text1" onchange="drawtext(1);">
                         <input type="text" class="a" id="text2">
                         <input type="text" class="a" id="text3">
                         <input type="text" class="a" id="text4">
@@ -69,8 +80,15 @@
 
                 </div>
             </div>
+            
+            <canvas id="canvas">
+                
+            </canvas>
+            
         </div>
-        
+
     </body>
 
 </html>
+
+<script src="script.js"></script>
