@@ -1,15 +1,6 @@
 let s = ["", "", "", "", "", ""];
 
-
 let iconarea = document.querySelector("#iconarea");
-
-
-
-
-function savesvg() {
-    let svg = document.getElementById("iconarea");
-    blob = new Blob([svg], {type:'image/svg+xml;charset=utf-8'});
-}
 
 
 
@@ -20,23 +11,10 @@ function download() {
     link.click();
 }
 
-
-
-
-function save() {
-    let image = document.querySelector("#iconarea");
-    console.log(image)
-    let file = new Blob([image], {type: "image/svg+xml;charset=utf-8"});
-    file.download = "test2.svg";
-}
-
-
-
-
 // chip icon drawing onto canvas
 function drawicon() {
     let pinAmmount = document.getElementById("pinAmmount_number").value * 1;
-    if (pinAmmount % 2 == 0 && pinAmmount > 0) {
+    if (pinAmmount % 2 == 0 && pinAmmount >= 2) {
 
         var canvaselement = document.getElementById("canvas");
         canvas = canvaselement.getContext("2d");
@@ -97,24 +75,12 @@ function drawicon() {
             canvas.textAlign = "end";
             canvas.fillText(pinAmmount-i, 212.5, 60+i*32);
         }
-
-
-        // TODO pin name textbox, pin name render, bar over pin, button to put bar
-        // all of the above todo is done
-
         
-        
-        
-        //canvas.strokeRect(20.5, 20.5, 100, 100);
-        //canvas.fillRect(0, 0, 100, 100);
-        
+    } else {
+        alert("pin number must be even and above 0!");
+        document.getElementById("pinAmmount_number").value = 2
     }
-    
-    else { alert("pin number must be even and above 0!") }
 }
-
-
-
 
 function drawtext(textid) {
     
@@ -129,31 +95,29 @@ function drawtext(textid) {
     
     if (textid <= pinAmmount / 2) {
         canvas.fillStyle = "#FFFFFF";
-        canvas.fillRect(14, 9+textid*32, 80, 20);
+        canvas.fillRect(14, 10+textid*32, 80, 24);
         canvas.fillStyle = "#000000"
         canvas.textAlign = "end";
         canvas.fillText(text, 94, 29+textid*32);
     }
     else {
         canvas.fillStyle = "#FFFFFF";
-        canvas.fillRect(246, 41 + (pinAmmount - textid) * 32, 80, 20);
+        canvas.fillRect(244, 42 + (pinAmmount - textid) * 32, 96, 24);
         canvas.fillStyle = "#000000"
         canvas.textAlign = "start";
         canvas.fillText(text, 246, 61 + (pinAmmount - textid) * 32);
     }
 
-
+    ul(textid);
+    ul(textid);
 }
-
-
-
 
 function underlineCanvas(color, _pinNumber) {
     let pinAmmount = document.getElementById("pinAmmount_number").value * 1;
     var canvaselement = document.getElementById("canvas");
     canvas = canvaselement.getContext("2d");
 
-    var textlen = canvas.measureText(document.getElementById("text"+_pinNumber).value).width;
+    var textlen = Math.ceil(canvas.measureText(document.getElementById("text"+_pinNumber).value).width);
 
     canvas.fillStyle = color;
 
@@ -164,14 +128,11 @@ function underlineCanvas(color, _pinNumber) {
     }
 }
 
-
-
-
 // chip icon dom placing
 function SetPinNumber() {
     let pinAmmount = document.getElementById("pinAmmount_number").value * 1;
     
-    if (pinAmmount % 2 == 0) {
+    if (pinAmmount % 2 == 0 && pinAmmount >= 2) {
         //get containers
         let sides = document.querySelectorAll(
             '#leftboxtext, #leftbox, #leftboxnumbers, #rightboxnumbers, #rightbox, #rightboxtext'
@@ -197,13 +158,7 @@ function SetPinNumber() {
             sides[i].innerHTML = s[i];
         }
     }
-    else {
-        alert("pin ammount must be even!")
-    }
 }
-
-
-
 
 // ul stands for underline, as when you click the number in the chip icon the input pin is inverted
 function ul(pinNumber) {
@@ -217,3 +172,5 @@ function ul(pinNumber) {
         underlineCanvas("#000000", pinNumber);
     }
 }
+
+setTimeout(drawicon, 200);
