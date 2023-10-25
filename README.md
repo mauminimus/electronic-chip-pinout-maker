@@ -1,8 +1,9 @@
 # electronic-chip-pinout-maker
-A tool to make pinout images mainly for DIP package chips
+A tool to make pinout images for DIP package chips
 
-- Use the slider to set the number of pins, or enter an arbitrary value in the box <br/>
-![image](https://user-images.githubusercontent.com/119792826/205493896-aa3418d9-a7b3-4680-bb00-7278a4ee1795.png)
+- Set the number of pins<br/>
+![image](https://github.com/mauminimus/electronic-chip-pinout-maker/assets/119792826/8ef536fe-d59a-48ba-91da-34d8309e234d)
+
 
 - Click in the void nex to a pin where you would like to enter text <br/>
 ![image](https://user-images.githubusercontent.com/119792826/205494394-238a2d41-266f-4809-aaae-1b3cda811428.png)
